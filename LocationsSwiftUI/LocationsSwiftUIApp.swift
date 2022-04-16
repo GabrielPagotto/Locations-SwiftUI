@@ -14,6 +14,8 @@ struct LocationsSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {
             LandmarkListUI()
+                .environmentObject(modelData)
         }
     }
 }
+

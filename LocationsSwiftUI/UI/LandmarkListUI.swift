@@ -25,7 +25,6 @@ struct LandmarkListUI: View {
                 Toggle(isOn: $showFavoritesOnly) {
                     Text("Favorites Only")
                 }
-                
                 ForEach(filteredLandmarks) { landmark in
                     NavigationLink {
                         LandmarkDetailUI(landmark: landmark)
