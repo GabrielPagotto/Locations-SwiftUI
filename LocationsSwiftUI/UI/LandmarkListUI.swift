@@ -32,10 +32,15 @@ struct LandmarkListUI: View {
                         LandmarkRowUI(landmark: landmark)
                     }
                 }
-                
+                .onDelete { modelData.landmarks.remove(atOffsets: $0) }
+                .onMove { modelData.landmarks.move(fromOffsets: $0, toOffset: $1) }
             }
             .navigationTitle("Landmarks")
             .searchable(text: $searchText)
+            .toolbar {
+                EditButton()
+                    
+            }
         }
     }
 }
